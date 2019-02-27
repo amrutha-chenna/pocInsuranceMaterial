@@ -1,0 +1,17 @@
+.fillWidth{
+    display: block;
+}
+.example-header-image {
+    background-image: url('../../assets/logo.PNG');
+    background-size: cover;
+}
+.backgroundLogin {
+    background-image: url('../../assets/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height : 100%;
+}
+
+button:not([disabled]):hover {
+    transform:scale(1.1);
+}

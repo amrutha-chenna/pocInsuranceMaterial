@@ -1,0 +1,38 @@
+{  
+   "policyType":{  
+      "Homeowner":"HN",
+      "Dwelling Fire":"DF"
+   },
+   "HN":[  
+      {  
+        "state":{  
+            "stateName":"Florida",
+            "stateCode":"FL"
+         },
+         "Company":{  
+            "Fednat Insurance Company":"Federated",
+            "Fednat Insurance Company CRU":"Federated"
+         }
+      },
+      {  
+         "state":{  
+            "stateName":"Arizona",
+            "stateCode":"AZ"
+         },
+         "Company":{  
+            "Arizona Insurance Company":"Federated",
+            "Arizonna Insurance Company CRU":"Federated"
+         }
+      }
+   ],
+   "DF":[{   
+      "state":{  
+        "stateName":"Florida",
+        "stateCode":"FL"
+      },
+      "Company":{  
+         "Fednat Insurance Company":"Federated",
+         "Fednat Insurance Company CRU":"Federated"
+      }
+   }]
+}

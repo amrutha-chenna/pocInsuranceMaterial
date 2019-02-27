@@ -1,0 +1,54 @@
+<form #quoteForm = 'ngForm' novalidate *ngIf='displayForm'>
+    <div class="row align-items-center">
+      <label class="col-12 col-sm-4 alignLabel">Effective Date:</label>
+      <mat-form-field  class="col-12 col-sm-4"  floatLabel="never">
+      <input matInput required [matDatepicker]="picker" 
+      [min]="today" name="effectiveDate" [(ngModel)]='quote.effectiveDate' >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>  
+    </div> 
+    <div class="row align-items-center">
+      <label class="col-sm-4 alignLabel">
+        Line of Business:
+      </label>
+      <mat-form-field  class="col-sm-4" floatLabel="never">
+          <mat-select required placeholder="Select" name="policyType" [(ngModel)]='quote.policyType' (selectionChange) = "calculateState(quote.policyType)">
+            <mat-option *ngFor="let policy of policyType|keyvalue" [value]="policy.value">
+              {{policy.key}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div> 
+    <div class="row align-items-center" *ngIf = 'quote.policyType'>
+      <label class="col-sm-4 alignLabel">
+       State:
+      </label>
+      <mat-form-field class="col-sm-4" floatLabel="never">
+          <mat-select required placeholder="Select"  name="state"
+          [(ngModel)] = 'quote.state'
+          (selectionChange) = "calculateCompany(quote.state,quote.policyType)">
+            <mat-option *ngFor="let state of states|keyvalue" [value] ="state.value" selected>
+              {{state.value['stateName']}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row align-items-center" *ngIf = 'quote.policyType && quote.state'>
+      <label class="col-sm-4 alignLabel">
+        Company:
+      </label>
+      <mat-form-field class="col-sm-4" floatLabel="never">
+          <mat-select required placeholder="Select" name="company" [(ngModel)]="quote.company" >
+            <mat-option *ngFor="let company of companies|keyvalue" [value]="company.value">
+              {{company.key}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+    <div  class="row justify-content-center">
+    <button mat-flat-button color="primary" [disabled]='quoteForm.invalid'
+    (click)='te(quoteForm)'>New Quote</button>
+  </div>
+  </form>
+  <router-outlet></router-outlet>

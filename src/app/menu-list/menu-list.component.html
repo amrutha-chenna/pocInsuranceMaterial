@@ -1,0 +1,20 @@
+<mat-list-item class="menu-list-item" *ngIf="item.link == null">
+  <a (click)="onItemSelected(item)">
+    {{item.displayName}} 
+    <span>
+        <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+          expand_more
+        </mat-icon>
+      </span>
+    </a>
+  <ng-container *ngIf="expanded">
+      <mat-nav-list>  
+    <mat-list-item class="menu-list-item" *ngFor="let submenu of menusetUp[item.formalName]" >
+          {{submenuOptions[submenu].displayName}}
+      </mat-list-item>
+      </mat-nav-list>
+    </ng-container>   
+</mat-list-item>
+<mat-list-item *ngIf = "item.link != null && item.connectingKey == undefined">
+    <a href='{{item.link}}'> {{item.displayName}} </a>
+</mat-list-item>

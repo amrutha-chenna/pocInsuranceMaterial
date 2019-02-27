@@ -1,0 +1,11 @@
+<mat-sidenav-container class="h">
+  <mat-sidenav mode="side" [opened] = "openSideNav" position="start">
+      <mat-nav-list>
+          <app-menu-list *ngFor="let item of menuOptions" [item]="item">
+          </app-menu-list>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

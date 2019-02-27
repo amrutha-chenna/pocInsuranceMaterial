@@ -1,0 +1,25 @@
+<div class="row backgroundLogin">
+  <div class="col-8 offset-2 col-md-4 offset-md-4">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <img src="../../assets/logo.PNG" height="100" width="100" style="float:left">
+        <p> Insurance company</p>
+        <form #login = 'ngForm' novalidate>
+          <mat-form-field class="fillWidth">
+            <input type="text" matInput placeholder="Enter Username" name="username"  [(ngModel)] = 'username' required>
+            <!-- <mat-error  *ngIf = "username.errors?.required"> Username is required </mat-error> -->
+          </mat-form-field>  
+          <mat-form-field class="fillWidth">
+            <input type="password" matInput   name="password" placeholder="Password" [(ngModel)] = 'password' required>
+            <!-- <mat-error *ngIf = "password.errors.required">  Password is required </mat-error> -->
+          </mat-form-field>  
+      </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="row justify-content-center">
+          <button mat-flat-button color="primary" [disabled] = 'login.invalid' class ="col-8 offset-2 col-sm-3" (click)='CheckUserLogin()' >Login</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

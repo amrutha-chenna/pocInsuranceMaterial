@@ -1,0 +1,15 @@
+.blockine {
+    display: block;
+  }
+  .mat-list-item {
+    padding: 8px 0;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+  }  
+.mat-icon  {
+  vertical-align: middle;
+}
+.mat-list-item-content {
+  flex-direction: column;
+}

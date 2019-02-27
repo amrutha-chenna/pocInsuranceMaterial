@@ -1,0 +1,26 @@
+
+
+{  
+    "policyType": {  
+       "Homeowner":"HN",
+       "Dwelling Fire":"DF"
+    } ,
+    "HN" :{
+        "state" : {
+            "Florida" : "FL"
+        },
+        "Company" : {
+            "Fednat Insurance Company":"Federated",
+            "Fednat Insurance Company CRU" : "Federated"
+        }
+    },
+    "DF" : {
+        "state" : {
+            "Florida" : "FL"
+        },
+        "Company" : {
+            "Fednat Insurance Company":"Federated",
+            "Fednat Insurance Company CRU" : "Federated"
+        }
+    }
+ }
